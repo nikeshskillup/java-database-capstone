@@ -1,0 +1,8 @@
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+.btn-prescription {
+  background-color: #28a745;
+  color: white;
+}

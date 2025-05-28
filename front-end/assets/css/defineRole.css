@@ -1,0 +1,20 @@
+body {
+  background: url('../images/defineRole/defineRole.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.role-btn {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.role-btn:hover {
+  transform: scale(1.05);
+}
