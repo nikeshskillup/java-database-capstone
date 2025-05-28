@@ -1,13 +1,140 @@
-.card-doctor {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 15px;
-  background-color: #f8f9fa;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.filters {
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f8fa;
+}
+
+.wrapper {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background: url('../assets/images/clinic-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  color: #333;
+}
+
+/* Search and Filters */
+#searchBar {
+  max-width: 300px;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+select.form-select {
+  max-width: 180px;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+/* Add Doctor Button */
+#addDoctorBtn {
+  background-color: #28a745;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#addDoctorBtn:hover {
+  background-color: #218838;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 15px 0 0;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: #000;
+}
+
+#modal-body {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Doctor Cards Container */
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual Doctor Card */
+.doctor-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  flex: 1 1 calc(33% - 20px);
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.doctor-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.doctor-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  #content {
+    flex-direction: column;
+  }
+  .doctor-card {
+    flex: 1 1 100%;
+  }
 }

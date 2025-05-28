@@ -1,8 +1,116 @@
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #f2f2f2;
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background: #f9f9f9;
 }
 
-.btn-prescription {
-  background-color: #28a745;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Search and Filter Section */
+.search-filter-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+#searchBar, #datePicker {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+#todayBtn {
+  background-color: #015c5d;
   color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#todayBtn:hover {
+  background-color: #017d7e;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: rgba(1, 92, 93, 0.8);
+  color: white;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+tbody tr:hover {
+  background-color: #d1f0f0;
+}
+
+tbody td {
+  padding: 10px;
+}
+
+/* Prescription Button */
+.prescription-btn {
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.prescription-btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* No records message */
+.noPatientRecord td {
+  font-style: italic;
+  color: gray;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .search-filter-section {
+    flex-direction: column;
+  }
+  #searchBar, #datePicker, #todayBtn {
+    width: 100%;
+  }
+  thead {
+    font-size: 14px;
+  }
+  tbody td {
+    font-size: 13px;
+  }
 }
