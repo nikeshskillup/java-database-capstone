@@ -1,10 +1,10 @@
-package com.smartclinic.service;
+package com.project.back_end.services;
 
-import com.smartclinic.dto.AppointmentDTO;
-import com.smartclinic.model.Appointment;
-import com.smartclinic.model.Patient;
-import com.smartclinic.repository.AppointmentRepository;
-import com.smartclinic.repository.PatientRepository;
+import com.project.back_end.dto.AppointmentDTO;
+import com.project.back_end.models.Appointment;
+import com.project.back_end.models.Patient;
+import com.project.back_end.repository.AppointmentRepository;
+import com.project.back_end.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

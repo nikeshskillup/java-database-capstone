@@ -1,11 +1,11 @@
-package com.yourapp.controller;
+package com.project.back_end.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.yourapp.service.TokenValidationService;
+import com.project.back_end.service.TokenValidationService;
 
 import java.util.Map;
 

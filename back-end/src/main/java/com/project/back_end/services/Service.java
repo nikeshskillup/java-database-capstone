@@ -1,7 +1,7 @@
-package com.smartclinic.service;
+package com.project.back_end.services;
 
-import com.smartclinic.model.*;
-import com.smartclinic.repository.*;
+import com.project.back_end.models.*;
+import com.project.back_end.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -117,7 +117,7 @@ public class Service {
     public ResponseEntity<Map<String, String>> validatePatientLogin(Login login) {
         Map<String, String> response = new HashMap<>();
         Optional<Patient> patientOpt = patientRepository.findByEmail(login.getEmail());
-        if (patientOpt.isEmpty() || !patientOpt.get().getPassword().equals(login.getPassword())) {
+        if (patientOpt.isPresent() || !patientOpt.get().getPassword().equals(login.getPassword())) {
             response.put("message", "Invalid email or password");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }

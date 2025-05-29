@@ -1,11 +1,12 @@
-package com.smartclinic.service;
+package com.project.back_end.services;
 
-import com.smartclinic.model.Admin;
-import com.smartclinic.model.Doctor;
-import com.smartclinic.model.Patient;
-import com.smartclinic.repository.AdminRepository;
-import com.smartclinic.repository.DoctorRepository;
-import com.smartclinic.repository.PatientRepository;
+
+import com.project.back_end.models.Admin;
+import com.project.back_end.models.Doctor;
+import com.project.back_end.models.Patient;
+import com.project.back_end.repository.AdminRepository;
+import com.project.back_end.repository.DoctorRepository;
+import com.project.back_end.repository.PatientRepository;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package com.smartclinic.dto;
+package com.project.back_end.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -13,9 +13,9 @@ public class LoginDTO {
     private String password;
 
     // Constructors
-    public Login() {}
+    public LoginDTO() {}
 
-    public Login(String email, String password) {
+    public LoginDTO(String email, String password) {
         this.email = email;
         this.password = password;
     }

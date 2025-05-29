@@ -1,7 +1,7 @@
-package com.smartclinic.service;
+package com.project.back_end.services;
 
-import com.smartclinic.model.Prescription;
-import com.smartclinic.repository.PrescriptionRepository;
+import com.project.back_end.models.Prescription;
+import com.project.back_end.repository.PrescriptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

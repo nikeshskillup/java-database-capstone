@@ -1,4 +1,4 @@
-package com.smartclinic.dto;
+package com.project.back_end.dto;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

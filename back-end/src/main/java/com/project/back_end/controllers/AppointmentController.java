@@ -1,8 +1,8 @@
-package com.smartclinic.controller;
+package com.project.back_end.controller;
 
-import com.smartclinic.model.Appointment;
-import com.smartclinic.service.AppointmentService;
-import com.smartclinic.service.Service;
+import com.project.back_end.models.Appointment;
+import com.project.back_end.services.AppointmentService;
+import com.project.back_end.services.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

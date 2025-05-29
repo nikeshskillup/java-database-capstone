@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DoctorDashboard</title>
+  <link rel="icon" href="favicon.ico" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/adminDashboard.css" />
+  <link rel="stylesheet" href="css/doctorDashboard.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Scripts (defer to load after parsing) -->
+  <script defer src="js/render.js"></script>
+  <script defer src="js/util.js"></script>
+  <script defer src="js/header.js"></script>
+  <script defer src="js/footer.js"></script>
+  <script defer src="js/patientRows.js"></script>
+  <script defer src="js/patientServices.js"></script>
+  <script defer src="js/doctorDashboard.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="header"></div>
+
+    <div class="wrapper main-content">
+      <div class="search-filter-section">
+        <input type="text" id="searchBar" placeholder="Search patients..." />
+        <button id="todayBtn" class="btn">Today's Appointments</button>
+        <input type="date" id="datePicker" />
+      </div>
+
+      <table id="patientTable" class="table">
+        <thead>
+          <tr>
+            <th>Patient ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Prescription</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Patient rows dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="footer"></div>
+  </div>
+</body>
+</html>

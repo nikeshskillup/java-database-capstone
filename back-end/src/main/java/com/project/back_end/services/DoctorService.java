@@ -1,9 +1,9 @@
-package com.smartclinic.service;
+package com.project.back_end.services;
 
-import com.smartclinic.model.Doctor;
-import com.smartclinic.model.Login;
-import com.smartclinic.repository.AppointmentRepository;
-import com.smartclinic.repository.DoctorRepository;
+import com.project.back_end.models.Doctor;
+// import com.project.back_end.models.Login;
+import com.project.back_end.repository.AppointmentRepository;
+import com.project.back_end.repository.DoctorRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -65,7 +65,7 @@ public class DoctorService {
 
     public int updateDoctor(Doctor doctor) {
         Optional<Doctor> existingOpt = doctorRepository.findById(doctor.getId());
-        if (existingOpt.isEmpty()) {
+        if (existingOpt.isPresent()) {
             return -1; // Not found
         }
         try {
@@ -82,7 +82,7 @@ public class DoctorService {
 
     public int deleteDoctor(Long id) {
         Optional<Doctor> doctorOpt = doctorRepository.findById(id);
-        if (doctorOpt.isEmpty()) {
+        if (doctorOpt.isPresent()) {
             return -1; // Not found
         }
         try {
@@ -94,7 +94,7 @@ public class DoctorService {
         }
     }
 
-    public ResponseEntity<Map<String, String>> validateDoctor(Login login) {
+    public ResponseEntity<Map<String, String>> validateDoctor() {
         Map<String, String> response = new HashMap<>();
         Doctor doctor = doctorRepository.findByEmail(login.getEmail());
         if (doctor == null) {
@@ -105,7 +105,8 @@ public class DoctorService {
             response.put("message", "Invalid password");
             return ResponseEntity.status(401).body(response);
         }
-        String token = tokenService.generateTokenForDoctor(doctor);
+        // String token = tokenService.generateTokenForDoctor(doctor);
+        String token = tokenService.generateToken(doctor.getEmail());
         response.put("token", token);
         return ResponseEntity.ok(response);
     }
@@ -117,7 +118,7 @@ public class DoctorService {
         return response;
     }
 
-    public Map<String, Object> filterDoctorsByNameSpecialtyAndTime(String name, String specialty, String amOrPm) {
+    public Map<String, Object> filterDoctorsByNameSpecialtyAndTime(String name, String Specialty, String amOrPm) {
         List<Doctor> filtered = doctorRepository.findByNameContainingIgnoreCaseAndSpecialtyIgnoreCase(name, specialty);
         filtered = filterDoctorByTime(filtered, amOrPm);
         Map<String, Object> response = new HashMap<>();
