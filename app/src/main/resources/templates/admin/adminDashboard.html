@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" th:href="@{/assets/css/adminDashboard.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+  <script th:src="@{/js/render.js}" defer></script>
+  <script th:src="@{/js/util.js}" defer></script>
+  <script th:src="@{/js/components/header.js}" defer></script>
+  <script th:src="@{/js/components/footer.js}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div id="header"></div>
+      <main class="main-content">
+        <div class="controls">
+          <input type="text" id="searchBar" placeholder="Search by doctor name" />
+          <select id="timeFilter">
+            <option value="">Sort by Time</option>
+            <option value="asc">Morning</option>
+            <option value="desc">Evening</option>
+          </select>
+          <select id="specialtyFilter">
+            <option value="">Filter by Specialty</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="neurology">Neurology</option>
+            <option value="pediatrics">Pediatrics</option>
+          </select>
+        </div>
+        <div id="content" class="doctor-list"></div>
+      </main>
+      <div id="footer"></div>
+    </div>
+  </div>
+
+  <!-- Add Doctor Modal -->
+  <div id="modal" class="modal">
+    <span id="closeModal" class="close">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+
+  <script type="module" th:src="@{/js/services/adminDashboard.js}" defer></script>
+  <script type="module" th:src="@{/js/components/doctorCard.js}" defer></script>
+</body>
+</html>
